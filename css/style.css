@@ -1,0 +1,892 @@
+/**
+ *
+ *	Package Name: Gleesik™ CSS3 Hover Effects Style | Demo Page CSS
+ *	Theme Version: 1.4
+ *	Author: Daniel Costrășel
+ *	Author URL: http://gleesik.ro/
+ *	Website: http://gleesik.ro/
+ *	Licence: Standard Gleesik™ GPLv2 Licence
+ * 
+ **/
+/**
+ *	Base Includes
+ **/
+/**
+ *
+ *	Package Name: Base
+ *	@package: CSS3 Hover Effects Base
+ *
+ **/
+/**
+ *	General Style
+ **/
+body {
+  background-color: #0c0f11;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  color: #bfbfbf;
+  font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+}
+
+a {
+  color: gray;
+}
+a:hover {
+  color: white;
+}
+
+/* Custom Scrollbar */
+* ::-webkit-scrollbar {
+  width: 5px;
+}
+
+* ::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+}
+
+* ::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  border: 0;
+}
+
+* ::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.row-separator {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  float: left;
+}
+
+.page-loader {
+  display: block;
+  position: fixed;
+  background: #090a0d;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 99999999999999;
+  filter: alpha(opacity=100);
+  -wekbit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition: all 0.7s ease-in-out;
+  -ms-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+.page-loader .load-icon {
+  display: block;
+  width: 70px;
+  height: 70px;
+}
+.page-loader .load-icon:before, .page-loader .load-icon:after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  width: 100%;
+  height: 100%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+}
+.page-loader .load-icon:before {
+  -webkit-animation: loader-in 0.85s linear 0s alternate infinite;
+  -moz-animation: loader-in 0.85s linear 0s alternate infinite;
+  -ms-animation: loader-in 0.85s linear 0s alternate infinite;
+  -o-animation: loader-in 0.85s linear 0s alternate infinite;
+  animation: loader-in 0.85s linear 0s alternate infinite;
+}
+.page-loader .load-icon:after {
+  -webkit-animation: loader-out 0.85s linear 0s alternate infinite;
+  -moz-animation: loader-out 0.85s linear 0s alternate infinite;
+  -ms-animation: loader-out 0.85s linear 0s alternate infinite;
+  -o-animation: loader-out 0.85s linear 0s alternate infinite;
+  animation: loader-out 0.85s linear 0s alternate infinite;
+}
+.page-loader.load-complete {
+  height: 0;
+  filter: alpha(opacity=0);
+  -wekbit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+}
+
+@keyframes loader-in {
+  0% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes loader-out {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+
+  100% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+}
+
+/**
+ *	Layouts Includes
+ **/
+/**
+ *
+ *	Package Name: Layouts
+ *	@package: CSS3 Hover Effects Layouts
+ *
+ **/
+/**
+ *	General Layouts
+ **/
+.site-wrapper {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.site-container {
+  display: block;
+  position: relative;
+  max-width: 1100px;
+  width: 95%;
+  margin: 0 auto;
+  float: none;
+}
+
+/**
+ *	Sections Effects
+ **/
+section.effect {
+  margin-top: 50px;
+}
+
+.effect-head {
+  display: block;
+  position: relative;
+  margin-bottom: 50px;
+}
+.effect-head h2 {
+  font-size: 35px;
+}
+.effect-head .new-item {
+  display: block;
+  position: absolute;
+  bottom: -140%;
+  right: 10%;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #F3C30F;
+  -webkit-animation: bouncing-size 0.7s linear 0s alternate infinite;
+  -moz-animation: bouncing-size 0.7s linear 0s alternate infinite;
+  -ms-animation: bouncing-size 0.7s linear 0s alternate infinite;
+  -o-animation: bouncing-size 0.7s linear 0s alternate infinite;
+  animation: bouncing-size 0.7s linear 0s alternate infinite;
+  -webkit-transition: color 0.3s ease-in-out;
+  -moz-transition: color 0.3s ease-in-out;
+  -ms-transition: color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+.effect-head .new-item:hover {
+  color: #f4c927;
+}
+.effect-head .new-item p {
+  display: block;
+  position: absolute;
+  color: white;
+  font-size: 0.25em;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  top: 38%;
+  left: 26%;
+  -webkit-transform: rotateZ(45deg);
+  -moz-transform: rotateZ(45deg);
+  -ms-transform: rotateZ(45deg);
+  -o-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+
+@keyframes bouncing-size {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+
+  100% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+.effect-head h2, .effect-head h3, .effect-type-box h2, .effect-type-box h3 {
+  text-align: center;
+}
+.effect-head .desc, .effect-type-box .desc {
+  text-align: center;
+}
+
+.effect-type-box {
+  margin-bottom: 15px;
+}
+
+.info-content {
+  text-align: center;
+}
+.info-content p {
+  font-weight: 100;
+  font-size: 14px;
+}
+.info-content .social-media {
+  padding-top: 5px;
+}
+
+/* Show Elements */
+.show-left .col-xm-3 {
+  filter: alpha(opacity=0);
+  -wekbit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  -webkit-transform: translateX(-60px);
+  -moz-transform: translateX(-60px);
+  -ms-transform: translateX(-60px);
+  -o-transform: translateX(-60px);
+  transform: translateX(-60px);
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -ms-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+.show-left .col-xm-3.show {
+  filter: alpha(opacity=100);
+  -wekbit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+.show-right .col-xm-3 {
+  filter: alpha(opacity=0);
+  -wekbit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  -webkit-transform: translateX(60px);
+  -moz-transform: translateX(60px);
+  -ms-transform: translateX(60px);
+  -o-transform: translateX(60px);
+  transform: translateX(60px);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.show-right .col-xm-3.show {
+  filter: alpha(opacity=100);
+  -wekbit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
+  transform: translateX(0px);
+}
+
+/* Go To Top Button */
+.go-to-top {
+  display: block;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: -70px;
+  right: 20px;
+  z-index: 99999999999 !important;
+  background: rgba(0, 0, 0, 0.4);
+}
+.go-to-top.active {
+  bottom: 20px;
+}
+.go-to-top.white-bg {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Pop Up Alert */
+.pop-up-alert {
+  display: none;
+}
+.pop-up-alert .close-pop-up {
+  cursor: pointer;
+  line-height: 35px;
+}
+.pop-up-alert .close-pop-up:hover {
+  font-size: 35px;
+  color: #e74c3c;
+}
+
+.pop-up-alert.active {
+  z-index: 999999;
+  display: block;
+  position: fixed !important;
+  background-color: rgba(0, 0, 0, 0.95);
+}
+
+/**
+ *
+ *	Package Name: Sections
+ *	@package: CSS3 Hover Effects Sections
+ *
+ **/
+/**
+ *	Site Header
+ **/
+header.site-header {
+  display: block;
+  overflow: hidden;
+}
+header.site-header .anchor-content {
+  height: 0 !important;
+  width: 0 !important;
+  margin: 0;
+  padding: 0;
+  clear: both;
+  float: right;
+  display: none;
+}
+header.site-header .site-container {
+  max-width: 1300px;
+}
+header.site-header .site-container .site-header-info, header.site-header .site-container .gleesik-logo {
+  z-index: 9999;
+}
+header.site-header .site-container .site-header-info span.version, header.site-header .site-container .gleesik-logo span.version {
+  display: block;
+  position: relative;
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  cursor: pointer;
+  -webkit-transition: color 0.3s ease-in-out;
+  -moz-transition: color 0.3s ease-in-out;
+  -ms-transition: color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+header.site-header .site-container .site-header-info span.version:hover, header.site-header .site-container .gleesik-logo span.version:hover {
+  color: white;
+}
+header.site-header .logo-row {
+  position: absolute;
+}
+header.site-header .arrow-scroll {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+}
+header.site-header .arrow-scroll .col-6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header.site-header .arrow-scroll .col-6 .arrow-scroll-icon {
+  -webkit-animation: bouncing 0.7s linear 0s alternate infinite;
+  -moz-animation: bouncing 0.7s linear 0s alternate infinite;
+  -ms-animation: bouncing 0.7s linear 0s alternate infinite;
+  -o-animation: bouncing 0.7s linear 0s alternate infinite;
+  animation: bouncing 0.7s linear 0s alternate infinite;
+}
+
+@keyframes bouncing {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(0, 50%, 0);
+    -moz-transform: translate3d(0, 50%, 0);
+    -ms-transform: translate3d(0, 50%, 0);
+    -o-transform: translate3d(0, 50%, 0);
+    transform: translate3d(0, 50%, 0);
+  }
+}
+
+/**
+ *	Site Menu
+ **/
+.site-menu {
+  display: block;
+  position: fixed;
+  width: 25%;
+  height: 100vh;
+  right: 0;
+  font-size: 18px;
+  z-index: 999999;
+  overflow-y: visible;
+  min-width: 320px;
+  max-width: 100%;
+  background: rgba(0, 0, 0, 0.92);
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  /* Toggle Menu */
+}
+.site-menu.active {
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  -o-transform: translateX(0%);
+  transform: translateX(0%);
+}
+.site-menu.active ul {
+  overflow-y: scroll;
+}
+.site-menu .toggle-menu {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 50px;
+  height: 45px;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99999999999;
+  cursor: pointer;
+  -webkit-transform: translate3d(-130%, 0, 0);
+  -moz-transform: translate3d(-130%, 0, 0);
+  -ms-transform: translate3d(-130%, 0, 0);
+  -o-transform: translate3d(-130%, 0, 0);
+  transform: translate3d(-130%, 0, 0);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+.site-menu .toggle-menu:before, .site-menu .toggle-menu:after, .site-menu .toggle-menu span {
+  display: block;
+  position: absolute;
+  content: '';
+  width: 34px;
+  height: 4px;
+  background: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.site-menu .toggle-menu.active {
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.site-menu .toggle-menu.active:before {
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotateZ(45deg);
+  -moz-transform: translateY(-50%) rotateZ(45deg);
+  -ms-transform: translateY(-50%) rotateZ(45deg);
+  -o-transform: translateY(-50%) rotateZ(45deg);
+  transform: translateY(-50%) rotateZ(45deg);
+}
+.site-menu .toggle-menu.active:after {
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotateZ(-45deg);
+  -moz-transform: translateY(-50%) rotateZ(-45deg);
+  -ms-transform: translateY(-50%) rotateZ(-45deg);
+  -o-transform: translateY(-50%) rotateZ(-45deg);
+  transform: translateY(-50%) rotateZ(-45deg);
+}
+.site-menu .toggle-menu.active span {
+  filter: alpha(opacity=0);
+  -wekbit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+}
+.site-menu .toggle-menu:before {
+  top: 8px;
+  -webkit-transform: rotateZ(0);
+  -moz-transform: rotateZ(0);
+  -ms-transform: rotateZ(0);
+  -o-transform: rotateZ(0);
+  transform: rotateZ(0);
+}
+.site-menu .toggle-menu:after {
+  top: 50%;
+  -webkit-transform: translateY(-50%) rotateZ(0);
+  -moz-transform: translateY(-50%) rotateZ(0);
+  -ms-transform: translateY(-50%) rotateZ(0);
+  -o-transform: translateY(-50%) rotateZ(0);
+  transform: translateY(-50%) rotateZ(0);
+}
+.site-menu .toggle-menu span {
+  bottom: 8px;
+  filter: alpha(opacity=100);
+  -wekbit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+.site-menu .menu-title {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 20vh;
+  float: left;
+  padding: 10% 0 8% 0;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-weight: bold;
+  clear: both;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 5px solid rgba(255, 255, 255, 0.02);
+}
+.site-menu ul {
+  display: block;
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 80vh;
+}
+.site-menu ul li {
+  display: block;
+  position: relative;
+}
+.site-menu ul li a {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 3% 0;
+  line-height: 40px;
+  text-align: left;
+  text-indent: 15%;
+}
+.site-menu ul li a .fa {
+  float: left;
+  width: 22px;
+  font-size: 15px;
+  line-height: 40px;
+}
+.site-menu ul li a.new .fa {
+  color: #F3C30F;
+}
+.site-menu ul li a:hover, .site-menu ul li a:active {
+  background: rgba(169, 219, 255, 0.1);
+  text-indent: 20%;
+}
+
+/**
+ *	Site Footer
+ **/
+footer.site-footer p {
+  line-height: 1.1;
+}
+footer.site-footer .buy-it {
+  height: 400px;
+  margin-top: 40px;
+  background-size: cover;
+  background-repeat: repeat-y;
+  background-position: center;
+  background-attachment: fixed;
+}
+footer.site-footer .buy-it.buy-it-wp {
+  height: 500px;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+footer.site-footer .buy-it.buy-it-wp .row {
+  margin-bottom: 10px;
+}
+footer.site-footer .buy-it.buy-it-wp .row.text {
+  margin-bottom: 40px;
+}
+footer.site-footer .buy-it.buy-it-wp .row:last-child {
+  margin-bottom: 0;
+}
+footer.site-footer .buy-it.buy-it-wp .row p {
+  margin-bottom: 12px;
+}
+footer.site-footer .buy-it .pulse:before {
+  border: 2px solid rgba(82, 153, 199, 0.6);
+}
+footer.site-footer .footer-info {
+  line-height: 1.1;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border-top: 5px solid rgba(255, 255, 255, 0.1);
+}
+
+/**
+ *	Gleesik Promo
+ **/
+.gleesik-promo {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 350px;
+  margin-top: 150px;
+  margin-bottom: 40px;
+  color: white;
+  background-color: #cb4c9e;
+  /* Old browsers */
+  background-image: -moz-linear-gradient(left, #cb4c9e 0%, #08becb 100%);
+  /* FF3.6+ */
+  background-image: -webkit-linear-gradient(left, #cb4c9e 0%, #08becb 100%);
+  /* Chrome10+,Safari5.1+ */
+  background-image: -o-linear-gradient(left, #cb4c9e 0%, #08becb 100%);
+  /* Opera 11.10+ */
+  background-image: -ms-linear-gradient(left, #cb4c9e 0%, #08becb 100%);
+  /* IE10+ */
+  background-image: linear-gradient(to right, #cb4c9e 0%, #08becb 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cb4c9e', endColorstr='#08becb',GradientType=1 );
+  /* IE6-9 */
+}
+.gleesik-promo .gleesik-logo-promo {
+  display: block;
+  position: absolute;
+  width: 120px;
+  top: -60px;
+}
+.gleesik-promo .gleesik-logo-promo:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #0c0f11;
+  box-shadow: 0 5px 4px 0.5px rgba(67, 177, 255, 0.9);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+}
+.gleesik-promo p {
+  font-size: 40px;
+  font-weight: 100;
+}
+
+/**
+ *	Browsers Compatibility
+ **/
+.browsers-compatibility .browsers-heading {
+  text-align: center;
+  margin: 50px 0;
+}
+.browsers-compatibility .browsers-info {
+  margin-bottom: 40px;
+}
+.browsers-compatibility .col-xm-2 {
+  text-align: center;
+  cursor: pointer;
+}
+.browsers-compatibility .col-xm-2 .fa {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -ms-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.browsers-compatibility .col-xm-2:hover .fa {
+  color: white;
+}
+.browsers-compatibility .col-xm-2 span {
+  display: inline-block;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  margin-top: 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  filter: alpha(opacity=0);
+  -wekbit-opacity: 0;
+  -moz-opacity: 0;
+  opacity: 0;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -ms-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.browsers-compatibility .col-xm-2 span:before {
+  display: block;
+  position: absolute !important;
+  top: -8px;
+  content: '';
+  width: 0;
+  height: 0;
+  float: left;
+  left: 50%;
+  position: relative;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid rgba(0, 0, 0, 0.5);
+}
+.browsers-compatibility .col-xm-2:hover span {
+  filter: alpha(opacity=100);
+  -wekbit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+/**
+ *
+ *	Package Name: Responsive Layouts
+ *	@package: CSS3 Hover Effects Responsive Layouts
+ *
+ **/
+@media screen and (max-width: 850px) {
+  .gleesik-logo img {
+    margin: 0 auto;
+    max-width: 200px !important;
+  }
+
+  .gleesik-promo p {
+    font-size: 30px;
+  }
+
+  .info-box .info-content * {
+    font-size: 12px;
+  }
+  .info-box .info-content h3 {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .logo {
+    padding: 0 5% !important;
+    width: 70% !important;
+  }
+
+  .gleesik-logo {
+    margin-bottom: 0 !important;
+    padding-bottom: 0;
+  }
+
+  .site-header-info {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .site-header-info span {
+    font-size: 24px !important;
+  }
+
+  .row .col-xm-3 {
+    width: 50%;
+    margin: 0;
+    padding: 3%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 520px) {
+  .gleesik-promo p {
+    font-size: 22px !important;
+  }
+
+  .row .col-xm-3 {
+    width: 100%;
+  }
+}
